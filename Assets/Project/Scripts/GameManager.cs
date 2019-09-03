@@ -32,7 +32,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         _playerScores = new int[2];
-        // TODO: Update timer text
+        UpdateUI();
     }
 
     private void Update()
@@ -46,12 +46,26 @@ public class GameManager : MonoBehaviour
             Time.timeScale = 0;
 
             // TODO: Note that there currently is no tie option.
-            var winnerIndex = _playerScores[0] > _playerScores[1] ? 0 : 1;
-            var winnerName = playerNames[winnerIndex];
-            var winnerColor = ColorUtility.ToHtmlStringRGBA(playerScoreText[winnerIndex].color);
+            var winnerIndex = _playerScores[0] > _playerScores[1] ? 0 : _playerScores[0] < _playerScores[1] ? 1 : -1;
 
             gameOverPanel.SetActive(true);
-            winnerText.text = $"<color=#{winnerColor}>{winnerName}</color> wins!";
+            if (winnerIndex >= 0)
+            {
+                var winnerName = playerNames[winnerIndex];
+                var winnerColor = ColorUtility.ToHtmlStringRGBA(playerScoreText[winnerIndex].color);
+                winnerText.text = $"The <color=#{winnerColor}>{winnerName}</color> wins!";
+            }
+            else
+            {
+                if (_playerScores[0] == 0)
+                {
+                    winnerText.text = "Try harder!";
+                }
+                else
+                {
+                    winnerText.text = "Everybody wins!";
+                }
+            }
         }
     }
 
