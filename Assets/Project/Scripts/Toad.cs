@@ -45,7 +45,7 @@ public class Toad : MonoBehaviour
 
     private void Update()
     {
-        var jumpButton = Input.GetButtonDown("Jump");
+        var jumpButton = Input.GetButtonDown($"Action{player}");
         if (jumpButton && _grounded)
         {
             _grounded = false;
