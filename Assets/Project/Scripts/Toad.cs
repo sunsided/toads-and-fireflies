@@ -29,6 +29,22 @@ public class Toad : MonoBehaviour
     [SerializeField]
     private Sprite jumpSprite;
 
+    [Header("Sounds")]
+    [SerializeField]
+    private AudioClip tongueClip;
+
+    [SerializeField]
+    private AudioClip jumpClip;
+
+    [SerializeField]
+    private AudioClip eatClip;
+
+    [SerializeField]
+    private float minPitch = 0.9f;
+
+    [SerializeField]
+    private float maxPitch = 1.2f;
+
     private bool _grounded;
 
     private bool _reachedTargetPoint;
@@ -39,10 +55,18 @@ public class Toad : MonoBehaviour
 
     private SpriteRenderer _renderer;
 
+    private AudioSource _audioSource;
+
     public int Player => player;
+
+    public void EatSomething()
+    {
+        PlayWithRandomPitch(eatClip);
+    }
 
     private void Awake()
     {
+        _audioSource = GetComponent<AudioSource>();
         _renderer = GetComponent<SpriteRenderer>();
         _grounded = true;
     }
@@ -58,6 +82,8 @@ public class Toad : MonoBehaviour
             _grounded = false;
             _jumpDirection = _positionIndex == 0 ? Vector2.right : Vector2.left;
             _renderer.sprite = jumpSprite;
+
+            PlayWithRandomPitch(jumpClip);
         }
         else if (jumpButton)
         {
@@ -70,9 +96,17 @@ public class Toad : MonoBehaviour
 
     private IEnumerator Attack()
     {
+        PlayWithRandomPitch(tongueClip);
+
         tongue.gameObject.SetActive(true);
         yield return new WaitForSeconds(tongueDuration);
         tongue.gameObject.SetActive(false);
+    }
+
+    private void PlayWithRandomPitch(AudioClip clip)
+    {
+        _audioSource.pitch = Random.Range(minPitch, maxPitch);
+        _audioSource.PlayOneShot(clip);
     }
 
     private void Move()

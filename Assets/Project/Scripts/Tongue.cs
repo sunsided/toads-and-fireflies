@@ -15,6 +15,8 @@ public class Tongue : MonoBehaviour
         var points = other.GetComponent<Firefly>().Points;
         game.AddPoints(toad.Player, points);
 
+        toad.EatSomething();
+
         Destroy(other.gameObject);
     }
 }
