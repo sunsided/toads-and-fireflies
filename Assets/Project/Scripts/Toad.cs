@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 public class Toad : MonoBehaviour
 {
@@ -12,6 +13,10 @@ public class Toad : MonoBehaviour
 
     [SerializeField]
     private Transform[] jumpPathPoints;
+
+    [Header("Attacking")]
+    [SerializeField]
+    private float tongueDuration = 0.7f;
 
     [Header("Sprites")]
     [SerializeField]
@@ -40,15 +45,32 @@ public class Toad : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetButtonDown("Jump") && _grounded)
+        var jumpButton = Input.GetButtonDown("Jump");
+        if (jumpButton && _grounded)
         {
             _grounded = false;
             _jumpDirection = _positionIndex == 0 ? Vector2.right : Vector2.left;
             _renderer.sprite = jumpSprite;
             Debug.Log("Jump!");
         }
+        else if (jumpButton)
+        {
+            Debug.Assert(!_grounded, "!_grounded");
+            StartCoroutine(Attack());
+        }
 
         Move();
+    }
+
+    private IEnumerator Attack()
+    {
+        // TODO: Activate tongue
+        Debug.Log("Attack started.");
+
+        yield return new WaitForSeconds(tongueDuration);
+
+        // TODO: Deactivate tongue
+        Debug.Log("Attack ended.");
     }
 
     private void Move()
