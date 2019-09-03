@@ -324,7 +324,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1792226813}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1516725647
 GameObject:
@@ -354,7 +354,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1792226813}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1603656552
 GameObject:
@@ -494,8 +494,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1062382617}
   - {fileID: 1516725648}
+  - {fileID: 1062382617}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -566,15 +566,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1254421563301737761, guid: 204392e327c210ac0ae534006da20631,
+    - target: {fileID: 6804211349926085455, guid: 204392e327c210ac0ae534006da20631,
         type: 3}
-      propertyPath: m_SortingLayerID
-      value: 750519707
+      propertyPath: jumpPathPoints.Array.size
+      value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 1254421563301737761, guid: 204392e327c210ac0ae534006da20631,
+    - target: {fileID: 6804211349926085455, guid: 204392e327c210ac0ae534006da20631,
         type: 3}
-      propertyPath: m_SortingLayer
-      value: 2
+      propertyPath: jumpPathPoints.Array.data[0]
+      value: 
+      objectReference: {fileID: 1516725648}
+    - target: {fileID: 6804211349926085455, guid: 204392e327c210ac0ae534006da20631,
+        type: 3}
+      propertyPath: jumpPathPoints.Array.data[1]
+      value: 
+      objectReference: {fileID: 820419268}
+    - target: {fileID: 6804211349926085455, guid: 204392e327c210ac0ae534006da20631,
+        type: 3}
+      propertyPath: jumpPathPoints.Array.data[2]
+      value: 
+      objectReference: {fileID: 1603656553}
+    - target: {fileID: 6804211349926085455, guid: 204392e327c210ac0ae534006da20631,
+        type: 3}
+      propertyPath: jumpSpeed
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 204392e327c210ac0ae534006da20631, type: 3}
