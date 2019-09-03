@@ -49,6 +49,9 @@ public class Toad : MonoBehaviour
 
     private void Update()
     {
+        // Don't accept inputs when time is frozen.
+        if (Time.timeScale <= 0) return;
+
         var jumpButton = Input.GetButtonDown($"Action{player}");
         if (jumpButton && _grounded)
         {

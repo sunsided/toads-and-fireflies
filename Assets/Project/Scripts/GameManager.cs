@@ -40,32 +40,21 @@ public class GameManager : MonoBehaviour
         _gameTime = Mathf.Max(0, _gameTime - Time.deltaTime);
         timerText.text = $"{_gameTime:0.0}";
 
-        if (_gameTime <= 0)
+        if (_gameTime > 0) return;
+        Time.timeScale = 0;
+
+        var winnerIndex = _playerScores[0] > _playerScores[1] ? 0 : _playerScores[0] < _playerScores[1] ? 1 : -1;
+
+        gameOverPanel.SetActive(true);
+        if (winnerIndex >= 0)
         {
-            // TODO: Game over!
-            Time.timeScale = 0;
-
-            // TODO: Note that there currently is no tie option.
-            var winnerIndex = _playerScores[0] > _playerScores[1] ? 0 : _playerScores[0] < _playerScores[1] ? 1 : -1;
-
-            gameOverPanel.SetActive(true);
-            if (winnerIndex >= 0)
-            {
-                var winnerName = playerNames[winnerIndex];
-                var winnerColor = ColorUtility.ToHtmlStringRGBA(playerScoreText[winnerIndex].color);
-                winnerText.text = $"The <color=#{winnerColor}>{winnerName}</color> wins!";
-            }
-            else
-            {
-                if (_playerScores[0] == 0)
-                {
-                    winnerText.text = "Try harder!";
-                }
-                else
-                {
-                    winnerText.text = "Everybody wins!";
-                }
-            }
+            var winnerName = playerNames[winnerIndex];
+            var winnerColor = ColorUtility.ToHtmlStringRGBA(playerScoreText[winnerIndex].color);
+            winnerText.text = $"The <color=#{winnerColor}>{winnerName}</color> wins!";
+        }
+        else
+        {
+            winnerText.text = _playerScores[0] == 0 ? "Try harder!" : "Everybody wins!";
         }
     }
 
