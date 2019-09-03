@@ -45,7 +45,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: 0
+  jumpSpeed: 5
   jumpPathPoints: []
+  idleSprite: {fileID: -3679997264467174265, guid: 28b0b41db977bb34e88184e8a80de5a5,
+    type: 3}
+  jumpSprite: {fileID: -6464100125502904173, guid: 28b0b41db977bb34e88184e8a80de5a5,
+    type: 3}
 --- !u!212 &1254421563301737761
 SpriteRenderer:
   m_ObjectHideFlags: 0

@@ -586,11 +586,6 @@ PrefabInstance:
       propertyPath: jumpPathPoints.Array.data[2]
       value: 
       objectReference: {fileID: 1603656553}
-    - target: {fileID: 6804211349926085455, guid: 204392e327c210ac0ae534006da20631,
-        type: 3}
-      propertyPath: jumpSpeed
-      value: 5
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 204392e327c210ac0ae534006da20631, type: 3}
 --- !u!1001 &2058109699671615428

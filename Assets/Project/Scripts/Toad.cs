@@ -1,16 +1,24 @@
-﻿using System.Runtime.CompilerServices;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Toad : MonoBehaviour
 {
+    [Header("Player")]
     [SerializeField]
     private int player;
 
+    [Header("Jumping")]
     [SerializeField]
     private float jumpSpeed = 1;
 
     [SerializeField]
     private Transform[] jumpPathPoints;
+
+    [Header("Sprites")]
+    [SerializeField]
+    private Sprite idleSprite;
+
+    [SerializeField]
+    private Sprite jumpSprite;
 
     private bool _grounded;
 
@@ -20,10 +28,13 @@ public class Toad : MonoBehaviour
 
     private Vector2 _jumpDirection;
 
+    private SpriteRenderer _renderer;
+
     public int Player => player;
 
     private void Awake()
     {
+        _renderer = GetComponent<SpriteRenderer>();
         _grounded = true;
     }
 
@@ -33,6 +44,7 @@ public class Toad : MonoBehaviour
         {
             _grounded = false;
             _jumpDirection = _positionIndex == 0 ? Vector2.right : Vector2.left;
+            _renderer.sprite = jumpSprite;
             Debug.Log("Jump!");
         }
 
@@ -83,6 +95,7 @@ public class Toad : MonoBehaviour
         if (!isAtLeft && !isAtRight) return false;
 
         transform.Rotate(Vector3.up, 180);
+        _renderer.sprite = idleSprite;
         _grounded = true;
         return true;
     }
