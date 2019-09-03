@@ -50,7 +50,18 @@ public class Firefly : MonoBehaviour
         _newPosition = transform.position;
         _newPosition.y += Mathf.Sin(Time.time * frequency * 2 * Mathf.PI + _randomSeed) * amplitude * Time.deltaTime;
         transform.position = _newPosition;
-
         Move();
+
+        RemoveFirefly();
+    }
+
+    private void RemoveFirefly()
+    {
+        var mainCamera = Camera.main;
+        Debug.Assert(mainCamera != null, "mainCamera != null");
+        var position = mainCamera.WorldToViewportPoint(_newPosition);
+        var isOutside = _direction == Vector2.right && position.x > 1 ||
+                        _direction == Vector2.left && position.x < 0;
+        if (isOutside) Destroy(gameObject);
     }
 }
