@@ -17,13 +17,15 @@ public class Firefly : MonoBehaviour
 
     private float _moveSpeed = 5;
 
-    private float _pointValue;
+    private int _pointValue;
 
     private Vector2 _direction;
 
     private Vector3 _newPosition;
 
     private float _randomSeed;
+
+    public int Points => _pointValue;
 
     private void Start()
     {
@@ -32,7 +34,7 @@ public class Firefly : MonoBehaviour
 
     public void Setup(float speed, Vector2 direction)
     {
-        _pointValue = Mathf.Ceil(speed * pointsPerSpeed);
+        _pointValue = Mathf.CeilToInt(speed * pointsPerSpeed);
         _direction = direction;
         _moveSpeed = speed;
     }

@@ -48,6 +48,7 @@ MonoBehaviour:
   player: 0
   jumpSpeed: 5
   jumpPathPoints: []
+  tongue: {fileID: 1218731093294110318}
   tongueDuration: 0.7
   idleSprite: {fileID: -3679997264467174265, guid: 28b0b41db977bb34e88184e8a80de5a5,
     type: 3}
@@ -124,7 +125,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2887845838668820584
 Transform:
   m_ObjectHideFlags: 0
@@ -194,8 +195,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 750519707
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: -6712559223974353493, guid: 28b0b41db977bb34e88184e8a80de5a5,
     type: 3}
@@ -221,8 +222,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: beef52439927154cf92f2265bc04a24a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _toad: {fileID: 0}
-  _gameObject: {fileID: 0}
+  toad: {fileID: 6804211349926085455}
+  game: {fileID: 0}
 --- !u!61 &6661925118923658901
 BoxCollider2D:
   m_ObjectHideFlags: 0
