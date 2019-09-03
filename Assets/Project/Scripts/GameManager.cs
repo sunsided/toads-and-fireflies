@@ -12,6 +12,15 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI timerText;
 
+    [SerializeField]
+    private GameObject gameOverPanel;
+
+    [SerializeField]
+    private TextMeshProUGUI winnerText;
+
+    [SerializeField]
+    private string[] playerNames = { "Green Toad", "Red Toad" };
+
     private int[] _playerScores;
 
     public void AddPoints(int player, int amount)
@@ -38,6 +47,11 @@ public class GameManager : MonoBehaviour
 
             // TODO: Note that there currently is no tie option.
             var winnerIndex = _playerScores[0] > _playerScores[1] ? 0 : 1;
+            var winnerName = playerNames[winnerIndex];
+            var winnerColor = ColorUtility.ToHtmlStringRGBA(playerScoreText[winnerIndex].color);
+
+            gameOverPanel.SetActive(true);
+            winnerText.text = $"<color=#{winnerColor}>{winnerName}</color> wins!";
         }
     }
 
