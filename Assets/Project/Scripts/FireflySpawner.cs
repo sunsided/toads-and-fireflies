@@ -33,6 +33,15 @@ public class FireflySpawner : MonoBehaviour
     [SerializeField]
     private int maxPower = 6;
 
+    public void RemoveAllFireflies()
+    {
+        var fireflies = parent.transform.GetComponentsInChildren<Firefly>();
+        foreach (var firefly in fireflies)
+        {
+            Destroy(firefly.gameObject);
+        }
+    }
+
     private void Awake()
     {
         if (parent == null) parent = transform;
@@ -61,5 +70,4 @@ public class FireflySpawner : MonoBehaviour
         yield return new WaitForSeconds(spawnDelay);
         StartCoroutine(Spawn());
     }
-
 }

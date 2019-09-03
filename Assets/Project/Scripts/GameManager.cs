@@ -31,6 +31,18 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        RestartGame();
+    }
+
+    private void RestartGame()
+    {
+        // Remove all existing fireflies
+        foreach (var spawner in FindObjectsOfType<FireflySpawner>())
+        {
+            spawner.RemoveAllFireflies();
+        }
+
+        // Reset the scores
         _playerScores = new int[2];
         UpdateUI();
     }

@@ -499,7 +499,7 @@ PrefabInstance:
     - target: {fileID: 8467040163752454049, guid: c1035e6b7e9cdb7288e22fda456edcd6,
         type: 3}
       propertyPath: maxSpawnDelay
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8467040163752454049, guid: c1035e6b7e9cdb7288e22fda456edcd6,
         type: 3}
@@ -2247,7 +2247,7 @@ PrefabInstance:
     - target: {fileID: 8467040163752454049, guid: c1035e6b7e9cdb7288e22fda456edcd6,
         type: 3}
       propertyPath: maxSpawnDelay
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8467040163752454049, guid: c1035e6b7e9cdb7288e22fda456edcd6,
         type: 3}
