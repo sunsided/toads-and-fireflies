@@ -762,6 +762,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Firefly
       objectReference: {fileID: 0}
+    - target: {fileID: 2058109699713595243, guid: 393d28f0a4082b56f904abdacd846e38,
+        type: 3}
+      propertyPath: m_TagString
+      value: Firefly
+      objectReference: {fileID: 0}
     - target: {fileID: 2058109699713595253, guid: 393d28f0a4082b56f904abdacd846e38,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -770,7 +775,7 @@ PrefabInstance:
     - target: {fileID: 2058109699713595253, guid: 393d28f0a4082b56f904abdacd846e38,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.6334316
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2058109699713595253, guid: 393d28f0a4082b56f904abdacd846e38,
         type: 3}
@@ -816,6 +821,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7150140106304818393, guid: 393d28f0a4082b56f904abdacd846e38,
+        type: 3}
+      propertyPath: frequency
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7150140106304818393, guid: 393d28f0a4082b56f904abdacd846e38,
+        type: 3}
+      propertyPath: amplitude
+      value: 1.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 393d28f0a4082b56f904abdacd846e38, type: 3}
