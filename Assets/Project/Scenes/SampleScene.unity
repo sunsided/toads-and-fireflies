@@ -121,6 +121,115 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &110538609
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1254421563301737760, guid: 204392e327c210ac0ae534006da20631,
+        type: 3}
+      propertyPath: m_Name
+      value: Toad 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1254421563301737762, guid: 204392e327c210ac0ae534006da20631,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1254421563301737762, guid: 204392e327c210ac0ae534006da20631,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 1254421563301737762, guid: 204392e327c210ac0ae534006da20631,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1254421563301737762, guid: 204392e327c210ac0ae534006da20631,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1254421563301737762, guid: 204392e327c210ac0ae534006da20631,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1254421563301737762, guid: 204392e327c210ac0ae534006da20631,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1254421563301737762, guid: 204392e327c210ac0ae534006da20631,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1254421563301737762, guid: 204392e327c210ac0ae534006da20631,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1254421563301737762, guid: 204392e327c210ac0ae534006da20631,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1254421563301737762, guid: 204392e327c210ac0ae534006da20631,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1254421563301737762, guid: 204392e327c210ac0ae534006da20631,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1254421563301737761, guid: 204392e327c210ac0ae534006da20631,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.65882355
+      objectReference: {fileID: 0}
+    - target: {fileID: 1254421563301737761, guid: 204392e327c210ac0ae534006da20631,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.33089992
+      objectReference: {fileID: 0}
+    - target: {fileID: 1254421563301737761, guid: 204392e327c210ac0ae534006da20631,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.10196079
+      objectReference: {fileID: 0}
+    - target: {fileID: 6804211349926085455, guid: 204392e327c210ac0ae534006da20631,
+        type: 3}
+      propertyPath: jumpPathPoints.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6804211349926085455, guid: 204392e327c210ac0ae534006da20631,
+        type: 3}
+      propertyPath: player
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6804211349926085455, guid: 204392e327c210ac0ae534006da20631,
+        type: 3}
+      propertyPath: jumpPathPoints.Array.data[0]
+      value: 
+      objectReference: {fileID: 1062382617}
+    - target: {fileID: 6804211349926085455, guid: 204392e327c210ac0ae534006da20631,
+        type: 3}
+      propertyPath: jumpPathPoints.Array.data[1]
+      value: 
+      objectReference: {fileID: 820419268}
+    - target: {fileID: 6804211349926085455, guid: 204392e327c210ac0ae534006da20631,
+        type: 3}
+      propertyPath: jumpPathPoints.Array.data[2]
+      value: 
+      objectReference: {fileID: 682846538}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 204392e327c210ac0ae534006da20631, type: 3}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -509,7 +618,7 @@ PrefabInstance:
     - target: {fileID: 1254421563301737760, guid: 204392e327c210ac0ae534006da20631,
         type: 3}
       propertyPath: m_Name
-      value: Toad
+      value: Toad 1
       objectReference: {fileID: 0}
     - target: {fileID: 1254421563301737762, guid: 204392e327c210ac0ae534006da20631,
         type: 3}
