@@ -16,6 +16,9 @@ public class FireflySpawner : MonoBehaviour
     [SerializeField]
     private float maxSpawnDelay = 6;
 
+    [SerializeField]
+    private Transform parent;
+
     [Header("Spawn Offset")]
     [SerializeField]
     private float minOffset = -2;
@@ -30,6 +33,11 @@ public class FireflySpawner : MonoBehaviour
     [SerializeField]
     private int maxPower = 6;
 
+    private void Awake()
+    {
+        if (parent == null) parent = transform;
+    }
+
     private void Start()
     {
         StartCoroutine(Spawn());
@@ -43,7 +51,8 @@ public class FireflySpawner : MonoBehaviour
         var selectedPrefab = fireflyPrefabs[Random.Range(0, fireflyPrefabs.Length)];
         var firefly = Instantiate(selectedPrefab,
             new Vector3(position.x, position.y + spawnOffset, position.z),
-            Quaternion.identity);
+            Quaternion.identity, parent);
+        firefly.name = selectedPrefab.name;
 
         var speed = Random.Range(minPower, maxPower);
         firefly.Setup(speed, transform.right);
