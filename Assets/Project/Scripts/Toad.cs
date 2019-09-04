@@ -151,6 +151,8 @@ public class Toad : MonoBehaviour
         var isAtLeft = _jumpDirection == Vector2.left && _positionIndex < 0;
         if (!isAtLeft && !isAtRight) return false;
 
+        tongue.gameObject.SetActive(false);
+
         transform.Rotate(Vector3.up, 180);
         _renderer.sprite = idleSprite;
         _grounded = true;
