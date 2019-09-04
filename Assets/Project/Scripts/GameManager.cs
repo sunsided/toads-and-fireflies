@@ -4,7 +4,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     [SerializeField]
-    private float _gameTime = 30;
+    private float gameTime = 30;
 
     [SerializeField]
     private TextMeshProUGUI[] playerScoreText;
@@ -21,7 +21,11 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private string[] playerNames = { "Green Toad", "Red Toad" };
 
+    private float _gameTime;
+
     private int[] _playerScores;
+
+    private bool _gameRunning;
 
     public void AddPoints(int player, int amount)
     {
@@ -42,18 +46,37 @@ public class GameManager : MonoBehaviour
             spawner.RemoveAllFireflies();
         }
 
-        // Reset the scores
+        // Remove menu
+        gameOverPanel.SetActive(false);
+
+        // Reset level
+        _gameTime = gameTime;
         _playerScores = new int[2];
         UpdateUI();
+
+        // Restart
+        _gameRunning = true;
+        Time.timeScale = 1;
     }
 
     private void Update()
     {
+        if (!_gameRunning)
+        {
+            var buttonPressed = Input.GetButtonDown("Action0") || Input.GetButtonDown("Action1");
+            if (buttonPressed)
+            {
+                RestartGame();
+                return;
+            }
+        }
+
         _gameTime = Mathf.Max(0, _gameTime - Time.deltaTime);
         timerText.text = $"{_gameTime:0.0}";
 
         if (_gameTime > 0) return;
         Time.timeScale = 0;
+        _gameRunning = false;
 
         var winnerIndex = _playerScores[0] > _playerScores[1] ? 0 : _playerScores[0] < _playerScores[1] ? 1 : -1;
 
