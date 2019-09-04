@@ -17,7 +17,7 @@ Here's a video of the game in action:
 
 ## Licenses and Attributions
 
-The sprites and backgrounds used in this game are taken from the Zenva Course material.
+The sprites and backgrounds used in this game are taken from the [Zenva Course](https://academy.zenva.com/product/unity-game-development-mini-degree/) material.
 
 This game is using the [Go Frog](https://fontsme.com/go-frog.font) font, which is free to use for personal use. 
 
