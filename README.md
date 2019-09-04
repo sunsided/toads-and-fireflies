@@ -2,6 +2,19 @@
 
 A 2D arcade style game in which two toads need to jump and try to catch fireflies.
 
+![](.readme/screenshot-1.png)
+
+Controls:
+
+- `Space` controls the green frog
+- `Return` controls the right frog.
+
+While on ground, hit `Space` or `Return` once to jump. While in air, hit `Space` or `Return` to use the tongue.
+
+Here's a video of the game in action:
+
+![](.readme/video.webp)
+
 ## Licenses and Attributions
 
 The sprites and backgrounds used in this game are taken from the Zenva Course material.
