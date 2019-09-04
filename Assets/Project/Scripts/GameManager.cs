@@ -1,5 +1,6 @@
 ﻿using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -20,6 +21,12 @@ public class GameManager : MonoBehaviour
 
     [SerializeField]
     private TextMeshProUGUI winnerText;
+
+    [SerializeField]
+    private Image cooldownBar;
+
+    [SerializeField]
+    private TextMeshProUGUI buttonToContinueText;
 
     [SerializeField]
     private string[] playerNames = { "Green Toad", "Red Toad" };
@@ -53,6 +60,7 @@ public class GameManager : MonoBehaviour
 
         // Remove menu
         gameOverPanel.SetActive(false);
+        buttonToContinueText.enabled = false;
 
         // Reset level
         _cooldownTime = 0;
@@ -70,6 +78,12 @@ public class GameManager : MonoBehaviour
         if (!_gameRunning)
         {
             _cooldownTime = Mathf.Max(0, _cooldownTime - Time.unscaledDeltaTime);
+            cooldownBar.fillAmount = _cooldownTime / gameOverCooldown;
+
+            if (_cooldownTime <= 0)
+            {
+                buttonToContinueText.enabled = true;
+            }
 
             var buttonPressed = Input.GetButtonDown("Action0") || Input.GetButtonDown("Action1");
             if (buttonPressed && _cooldownTime <= 0)
