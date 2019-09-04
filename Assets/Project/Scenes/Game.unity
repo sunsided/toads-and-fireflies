@@ -1144,7 +1144,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac7d47c216f6160dd9563254d7d656ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gameTime: 30
+  gameTime: 30
+  gameOverCooldown: 5
   playerScoreText:
   - {fileID: 1834014072}
   - {fileID: 511572575}

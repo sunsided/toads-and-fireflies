@@ -7,6 +7,9 @@ public class GameManager : MonoBehaviour
     private float gameTime = 30;
 
     [SerializeField]
+    private float gameOverCooldown = 5;
+
+    [SerializeField]
     private TextMeshProUGUI[] playerScoreText;
 
     [SerializeField]
@@ -22,6 +25,8 @@ public class GameManager : MonoBehaviour
     private string[] playerNames = { "Green Toad", "Red Toad" };
 
     private float _gameTime;
+
+    private float _cooldownTime;
 
     private int[] _playerScores;
 
@@ -50,6 +55,7 @@ public class GameManager : MonoBehaviour
         gameOverPanel.SetActive(false);
 
         // Reset level
+        _cooldownTime = 0;
         _gameTime = gameTime;
         _playerScores = new int[2];
         UpdateUI();
@@ -63,12 +69,15 @@ public class GameManager : MonoBehaviour
     {
         if (!_gameRunning)
         {
+            _cooldownTime = Mathf.Max(0, _cooldownTime - Time.unscaledDeltaTime);
+
             var buttonPressed = Input.GetButtonDown("Action0") || Input.GetButtonDown("Action1");
-            if (buttonPressed)
+            if (buttonPressed && _cooldownTime <= 0)
             {
                 RestartGame();
-                return;
             }
+
+            return;
         }
 
         _gameTime = Mathf.Max(0, _gameTime - Time.deltaTime);
@@ -77,6 +86,7 @@ public class GameManager : MonoBehaviour
         if (_gameTime > 0) return;
         Time.timeScale = 0;
         _gameRunning = false;
+        _cooldownTime = gameOverCooldown;
 
         var winnerIndex = _playerScores[0] > _playerScores[1] ? 0 : _playerScores[0] < _playerScores[1] ? 1 : -1;
 
