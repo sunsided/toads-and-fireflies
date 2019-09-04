@@ -60,7 +60,7 @@ public class GameManager : MonoBehaviour
 
         // Remove menu
         gameOverPanel.SetActive(false);
-        buttonToContinueText.enabled = false;
+        buttonToContinueText.gameObject.SetActive(false);
 
         // Reset level
         _cooldownTime = 0;
@@ -82,7 +82,7 @@ public class GameManager : MonoBehaviour
 
             if (_cooldownTime <= 0)
             {
-                buttonToContinueText.enabled = true;
+                buttonToContinueText.gameObject.SetActive(true);
             }
 
             var buttonPressed = Input.GetButtonDown("Action0") || Input.GetButtonDown("Action1");
