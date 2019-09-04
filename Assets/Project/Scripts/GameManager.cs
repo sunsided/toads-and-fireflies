@@ -75,6 +75,8 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
+        TryStopGame();
+
         if (!_gameRunning)
         {
             _cooldownTime = Mathf.Max(0, _cooldownTime - Time.unscaledDeltaTime);
@@ -122,4 +124,20 @@ public class GameManager : MonoBehaviour
         playerScoreText[0].text = $"{_playerScores[0]}";
         playerScoreText[1].text = $"{_playerScores[1]}";
     }
+
+    private static void TryStopGame()
+    {
+        if (!Input.GetButtonDown("Cancel")) return;
+
+        Debug.Log("Stopping game.");
+
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#elif UNITY_WEBPLAYER
+         Application.OpenURL(webplayerQuitURL);
+#else
+         Application.Quit();
+#endif
+    }
+
 }
