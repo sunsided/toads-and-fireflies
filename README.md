@@ -1,6 +1,6 @@
 # Toads and Fireflies
 
-A 2D arcade style local multiplayer game in which two toads need to jump and try to catch fireflies.
+Mimicking the classic [Frogs and Flies](https://en.wikipedia.org/wiki/Frogs_and_Flies), this is a 2D arcade style local multiplayer game in which two toads need to jump and try to catch fireflies mid-air.
 
 ![](.readme/screenshot-1.png)
 
